@@ -35,7 +35,7 @@ class TypeResolver {
 
         /**
          * Collection of types.
-         * @type {Collection<string, ArgumentTypeCaster>}
+         * @type {Collection<symbol, ArgumentTypeCaster>}
          */
         this.types = new Collection();
 
@@ -433,7 +433,7 @@ class TypeResolver {
 
     /**
      * Gets the resolver function for a type.
-     * @param {string} name - Name of type.
+     * @param {symbol} name - Name of type.
      * @returns {ArgumentTypeCaster}
      */
     type(name) {
@@ -442,7 +442,7 @@ class TypeResolver {
 
     /**
      * Adds a new type.
-     * @param {string} name - Name of the type.
+     * @param {symbol} name - Name of the type.
      * @param {ArgumentTypeCaster} fn - Function that casts the type.
      * @returns {TypeResolver}
      */

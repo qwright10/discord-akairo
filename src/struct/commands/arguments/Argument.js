@@ -1,4 +1,4 @@
-const { ArgumentMatches, ArgumentTypes } = require('../../../util/Constants');
+const { ArgumentMatches, ArgumentTypes, ArgumentTypeResolver } = require('../../../util/Constants');
 const Flag = require('../Flag');
 const { choice, intoCallable, isPromise } = require('../../../util/Util');
 
@@ -109,6 +109,13 @@ class Argument {
     get handler() {
         return this.command.handler;
     }
+
+    /**
+     * The types an argument can be.
+     * @static
+     * @type {ArgumentTypes}
+     */
+    static Types = ArgumentTypeResolver;
 
     /**
      * Processes the type casting and prompting of the argument for a phrase.
